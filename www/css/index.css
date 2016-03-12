@@ -115,7 +115,10 @@ h1 {
 }
 
 .header{
-    background-color:blue;
+    padding-top:5%;
+}
+.last{
+    margin-top:5%;
 }
 .search{
     margin-top: 50%;
