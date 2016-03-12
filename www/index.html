@@ -36,10 +36,15 @@
         -->
         <!-- Include jQuery Mobile stylesheets -->
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-
         <!-- Include the jQuery library -->
         <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-
+        <script>
+            $(document).bind('mobileinit',function(){
+                $.mobile.changePage.defaults.changeHash = false;
+                $.mobile.hashListeningEnabled = false;
+                $.mobile.pushStateEnabled = false;
+            });
+        </script>
         <!-- Include the jQuery Mobile library -->
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript">
@@ -53,6 +58,10 @@
             <div data-role="content" id="content">
                 HomePageee
                 <a href="#mainPage" data-transition="fade">Next</a>
+                <div data-role="content"class="search">
+                    <label for="search">Search:</label>
+                    <input type="search" name="search" id="search">
+                </div>
             </div>
         </div>
         <div data-role="page" id="mainPage">
@@ -61,29 +70,47 @@
                 <h2>Main Page</h2>
             </div>
             <div data-role="content">
-                <a href="#sellPage"style="float:left;">Sell</a>
-                <a href="#myAccount"style="float:right;">My Account</a>
+                <a href="#sellPage"class="ui-btn"style="float:left;">Sell</a>
+                <a href="#myAccount"class="ui-btn"id="top"style="float:right;">My Account</a>
             </div>
-            <div data-role="content">
-                <button class="mainCategory">Textbooks </button>
-            </div>
-            <div data-role="content">
-                <button class="mainCategory">Sports Tickets</button>
-            </div>
-            <div data-role="content">
-                <button class="mainCategory">Housing</button>
-            </div>
-            <div data-role="content">
-                <button class="mainCategory">Furniture</button>
-            </div>
-            <div data-role="content">
-                <button class="mainCategory">Transportation</button>
+            <div id="mainCategoryButtons"data-role="controlgroup">
+                <a data-role="button" href="#Textbooks" data-transition="fade"><div data-role="content">
+                    Textbooks
+                </div></a>
+                <a data-role="button" href="#SportsTickets" data-transition="fade"><div data-role="content">
+                    Sports Tickets
+                </div></a>
+                <a data-role="button" href="#Housing" data-transition="fade"><div data-role="content">
+                    Housing/Parking
+                </div></a>
+                <a data-role="button" href="#Furniture" data-transition="fade"><div data-role="content">
+                    Furniture
+                </div></a>
+                <a data-role="button" href="#Transportation" data-transition="fade"><div class="mainCategory"data-role="content">
+                    Transportation
+                </div></a>
             </div>
         </div>
         <div data-role="page" id="sellPage">
             <div data-role="header">
                 <a href="#mainPage" data-transition="slide">Back</a>
                 <h2>Sell</h2>
+            </div>
+            <div data-role="content">
+                <fieldset data-role="controlgroup">
+                    <legend>What would you like to sell:</legend>
+                      <label for="textbooks">Textbooks</label>
+                      <input type="radio" name="category" id="textbooks" value="textbooks">
+                      <label for="tickets">Sports Tickets</label>
+                      <input type="radio" name="category" id="tickets" value="tickets"> 
+                      <label for="housing">Housing/Parking</label>
+                      <input type="radio" name="category" id="housing" value="housing"> 
+                      <label for="furniture">Furniture</label>
+                      <input type="radio" name="category" id="furniture" value="furniture"> 
+                      <label for="transportation">Transportation</label>
+                      <input type="radio" name="category" id="transportation" value="transportation"> 
+              </fieldset>
+                      <a href="#" data-role="button"data-icon="arrow-r">Next</a>
             </div>
         </div>
         <div data-role="page" id="myAccount">

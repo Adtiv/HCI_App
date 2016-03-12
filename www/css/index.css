@@ -117,3 +117,13 @@ h1 {
 .header{
     background-color:blue;
 }
+.search{
+    margin-top: 60%;
+}
+#mainCategoryButtons{
+    bottom:0;
+    position:fixed;
+    padding-bottom:0;
+    width:110%;
+    margin-left: -6%;
+}
