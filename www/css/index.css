@@ -118,7 +118,17 @@ h1 {
     background-color:blue;
 }
 .search{
-    margin-top: 60%;
+    margin-top: 50%;
+}
+.mainIcon{
+    width:10vw;
+    height:10vw;
+    margin-left:80%;
+}
+.iconDiv{
+    display:inline-block; 
+    margin-right:-5%;
+    float:left;
 }
 #mainCategoryButtons{
     bottom:0;
@@ -126,4 +136,13 @@ h1 {
     padding-bottom:0;
     width:110%;
     margin-left: -6%;
+}
+.accountDiv{
+    height:20vh;
+}
+#profileImage{
+    width:50%;
+    height:50%;
+    text-align:center;
+    margin-bottom: -5%;
 }

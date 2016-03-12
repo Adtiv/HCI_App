@@ -51,22 +51,35 @@
             app.initialize();
         </script>
 
-        <title>Hello World</title>
+        <title>HCI_App</title>
     </head>
     <body>
         <div data-role="page" id="homePage">
-            <div data-role="content" id="content">
+            <div data-role="content" id="search">
                 HomePageee
                 <a href="#mainPage" data-transition="fade">Next</a>
                 <div data-role="content"class="search">
-                    <label for="search">Search:</label>
-                    <input type="search" name="search" id="search">
+                    <input type="search" name="search" id="search"placeholder="Search for your University">
                 </div>
             </div>
+            <div data-role="content" style="text-align:center;">
+                <a href="#login"><i>Log in</i></a><br><br>
+                <a href="#signUp"><i>Sign up</i></a>
+            </div>
         </div>
-        <div data-role="page" id="mainPage">
+        <div data-role"page" id="login">
+                <a href="#homePage">
+                    Done
+                </a>
+        </div>
+        <div data-role"page" id="signUp">
+                <a href="#homePage">
+                    Done
+                </a>
+        </div>
+        <div data-role="page" id="mainPage" data-theme="b">
             <div data-role="header">
-                <a href="#homePage" data-transition="slide">Back</a>
+                <a href="#homePage" data-transition="slide" data-icon="back" data-iconpos="notext"></a>
                 <h2>Main Page</h2>
             </div>
             <div data-role="content">
@@ -75,25 +88,32 @@
             </div>
             <div id="mainCategoryButtons"data-role="controlgroup">
                 <a data-role="button" href="#Textbooks" data-transition="fade"><div data-role="content">
-                    Textbooks
+                        <div class="iconDiv"><img class="mainIcon" src="img/books.png"></div>
+                        <div style="display:inline-block;margin-top:2%">Textbooks</div>
                 </div></a>
                 <a data-role="button" href="#SportsTickets" data-transition="fade"><div data-role="content">
-                    Sports Tickets
+                        <div class="iconDiv"><img class="mainIcon" src="img/tickets.png"></div>
+                        <div style="display:inline-block;margin-top:2%">Sports Tickets</div>
                 </div></a>
                 <a data-role="button" href="#Housing" data-transition="fade"><div data-role="content">
-                    Housing/Parking
+                    <div>
+                        <div class="iconDiv"><img class="mainIcon" src="img/house.png"></div>
+                        <div style="display:inline-block;margin-top:2%">Housing/Parking</div>
+                    </div>
                 </div></a>
                 <a data-role="button" href="#Furniture" data-transition="fade"><div data-role="content">
-                    Furniture
+                        <div class="iconDiv"><img class="mainIcon" src="img/Couch.png"></div>
+                        <div style="display:inline-block;margin-top:2%">Furniture</div>
                 </div></a>
                 <a data-role="button" href="#Transportation" data-transition="fade"><div class="mainCategory"data-role="content">
-                    Transportation
+                        <div class="iconDiv"><img class="mainIcon" src="img/bike.png"></div>
+                        <div style="display:inline-block;margin-top:2%">Transportation</div>
                 </div></a>
             </div>
         </div>
         <div data-role="page" id="sellPage">
             <div data-role="header">
-                <a href="#mainPage" data-transition="slide">Back</a>
+                <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"></a>
                 <h2>Sell</h2>
             </div>
             <div data-role="content">
@@ -113,39 +133,69 @@
                       <a href="#" data-role="button"data-icon="arrow-r">Next</a>
             </div>
         </div>
-        <div data-role="page" id="myAccount">
+        <div data-role="page" id="myAccount" style="text-align:center;">
             <div data-role="header">
-                <a href="#mainPage" data-transition="slide">Back</a>
+                <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"></a>
                 <h2>My Account</h2>
+                <a href="#settings" data-role="button" data-transition="fade" data-icon="gear"data-iconpos="notext"></a>
+            </div>
+            <div data-role="content"style="height:75vh;margin-top:13vh">
+                <div data-role="content"class="accountDiv"id="interestedIn">
+                    Interested In
+                </div>
+                <div data-role="content"class="accountDiv"id="sellHistory">
+                    Selling History
+                </div>
+                <div data-role="content"class="accountDiv"id="buyHistory">
+                    Buying History
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="settings">
+            <div data-role="header">
+                <a href="#myAccount" data-transition="slide"data-icon="back"data-iconpos="notext"></a>
+                <h2>Settings</h2>
+            </div>
+            <div data-role="content" style="text-align:center">
+                <h2>Hello Username</h2>
+                <img id="profileImage" src="img/user.png">
+                <button data-icon="arrow-u"class="ui-nodisc-icon" data-theme="b" style="width:30%; margin-left:35%;"></button>
+                <p>Upload Image</p>
+                <p>Change Username</p>                
+                <p>Change Password</p>
+                <p>Contact Email</p>
+                <p>Contact Number(Optional)</p>
+                <p>University</p>
+
             </div>
         </div>
         <div data-role="page" id="Textbooks">
             <div data-role="header">
-                <a href="#mainPage" data-transition="slide">Back</a>
+                <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"></a>
                 <h2>Textbooks</h2>
             </div>
         </div>
         <div data-role="page" id="SportsTickets">
             <div data-role="header">
-                <a href="#mainPage" data-transition="slide">Back</a>
+                <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"></a>
                 <h2>Sports Tickets</h2>
             </div>
         </div>
         <div data-role="page" id="Housing">
             <div data-role="header">
-                <a href="#mainPage" data-transition="slide">Back</a>
-                <h2>Housing</h2>
+                <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"></a>
+                <h2>Housing/Parking</h2>
             </div>
         </div>
         <div data-role="page" id="Furniture">
             <div data-role="header">
-                <a href="#mainPage" data-transition="slide">Back</a>
+                <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"></a>
                 <h2>Furniture</h2>
             </div>
         </div>
         <div data-role="page" id="Transportation">
             <div data-role="header">
-                <a href="#mainPage" data-transition="slide">Back</a>
+                <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"></a>
                 <h2>Transportation</h2>
             </div>
         </div>
