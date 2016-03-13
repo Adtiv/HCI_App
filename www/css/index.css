@@ -123,6 +123,8 @@ h1 {
 .search{
     margin-top: 50%;
 }
+#mainSearch{
+}
 .mainIcon{
     width:10vw;
     height:10vw;
@@ -141,11 +143,15 @@ h1 {
     margin-left: -6%;
 }
 .accountDiv{
-    height:20vh;
+    height:18vh;
+    text-align: left;
 }
 #profileImage{
     width:50%;
     height:50%;
     text-align:center;
     margin-bottom: -5%;
+}
+.line{
+    color:#ffffff;
 }

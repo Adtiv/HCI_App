@@ -80,41 +80,46 @@
         <div data-role="page" id="mainPage" data-theme="b">
             <div data-role="header" class="header">
                 <a href="#homePage" data-transition="slide" data-icon="back" data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Main Page</h2>
             </div>
             <div data-role="content">
-                <a href="#sellPage"class="ui-btn"style="float:left;">Sell</a>
-                <a href="#myAccount"class="ui-btn"id="top"style="float:right;">My Account</a>
-            </div>
-            <div id="mainCategoryButtons"data-role="controlgroup">
-                <a data-role="button" href="#Textbooks" data-transition="fade"><div data-role="content">
-                        <div class="iconDiv"><img class="mainIcon" src="img/books.png"></div>
-                        <div style="display:inline-block;margin-top:2%">Textbooks</div>
-                </div></a>
-                <a data-role="button" href="#SportsTickets" data-transition="fade"><div data-role="content">
-                        <div class="iconDiv"><img class="mainIcon" src="img/tickets.png"></div>
-                        <div style="display:inline-block;margin-top:2%">Sports Tickets</div>
-                </div></a>
-                <a data-role="button" href="#Housing" data-transition="fade"><div data-role="content">
-                    <div>
-                        <div class="iconDiv"><img class="mainIcon" src="img/house.png"></div>
-                        <div style="display:inline-block;margin-top:2%">Housing/Parking</div>
-                    </div>
-                </div></a>
-                <a data-role="button" href="#Furniture" data-transition="fade"><div data-role="content">
-                        <div class="iconDiv"><img class="mainIcon" src="img/Couch.png"></div>
-                        <div style="display:inline-block;margin-top:2%">Furniture</div>
-                </div></a>
-                <a data-role="button" href="#Transportation" data-transition="fade"><div class="mainCategory"data-role="content">
-                        <div class="iconDiv"><img class="mainIcon" src="img/bike.png"></div>
-                        <div style="display:inline-block;margin-top:2%">Transportation</div>
-                </div></a>
+                <a href="#sellPage"data-role="button"style="float:left; margin-top:-2%; font-size:3.5vw;"><img src="img/Money.png" style="width:4.8vw;height:4.8vw;"> Sell</a>
+                 <span style="margin-left:3%;">UF</span>
+                <div style="margin-top:15%;">
+                    <input type="search" name="search" id="mainSearch"placeholder="Search">
+                </div>
+                <div id="mainCategoryButtons"data-role="controlgroup">
+                    <a data-role="button" href="#Textbooks" data-transition="fade"><div data-role="content">
+                            <div class="iconDiv"><img class="mainIcon" src="img/books.png"></div>
+                            <div style="display:inline-block;margin-top:2%">Textbooks</div>
+                    </div></a>
+                    <a data-role="button" href="#SportsTickets" data-transition="fade"><div data-role="content">
+                            <div class="iconDiv"><img class="mainIcon" src="img/tickets.png"></div>
+                            <div style="display:inline-block;margin-top:2%">Sports Tickets</div>
+                    </div></a>
+                    <a data-role="button" href="#Housing" data-transition="fade"><div data-role="content">
+                        <div>
+                            <div class="iconDiv"><img class="mainIcon" src="img/house.png"></div>
+                            <div style="display:inline-block;margin-top:2%">Housing/Parking</div>
+                        </div>
+                    </div></a>
+                    <a data-role="button" href="#Furniture" data-transition="fade"><div data-role="content">
+                            <div class="iconDiv"><img class="mainIcon" src="img/Couch.png"></div>
+                            <div style="display:inline-block;margin-top:2%">Furniture</div>
+                    </div></a>
+                    <a data-role="button" href="#Transportation" data-transition="fade"><div class="mainCategory"data-role="content">
+                            <div class="iconDiv"><img class="mainIcon" src="img/bike.png"></div>
+                            <div style="display:inline-block;margin-top:2%">Transportation</div>
+                    </div></a>
+                </div>
             </div>
         </div>
-        <div data-role="page" id="sellPage">
+        <div data-role="page" id="sellPage" data-theme="b">
             <div data-role="header"class="header">
                 <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Sell</h2>
+                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
             </div>
             <div data-role="content">
                 <fieldset data-role="controlgroup">
@@ -133,34 +138,39 @@
                       <a href="#" data-role="button"data-icon="arrow-r">Next</a>
             </div>
         </div>
-        <div data-role="page" id="myAccount" style="text-align:center;">
+        <div data-role="page" id="myAccount" style="text-align:center;" data-theme="b">
             <div data-role="header" class="header">
                 <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
-                <h2>My Account</h2>
+                <h1>My Account</h1>
                 <a href="#settings" data-role="button" data-transition="fade" data-icon="gear"data-iconpos="notext"style="margin-top:5%;"></a>
             </div>
-            <div data-role="content"style="height:75vh;margin-top:10vh">
+            <div data-role="content" style="margin-bottom:-8vh; margin-top:-3vh;">
+                <h2>Hello Username</h2>
+            </div>
+            <div data-role="content"style="height:75vh;">
                 <div data-role="content"class="accountDiv"id="interestedIn">
-                    Interested In
+                    <u>Interested In</u>
+
                 </div>
+                <hr class="line">
                 <div data-role="content"class="accountDiv"id="sellHistory">
-                    Selling History
+                    <u>Selling History</u>
                 </div>
+                <hr class="line">
                 <div data-role="content"class="accountDiv"id="buyHistory">
-                    Buying History
+                    <u>Buying History</u>
                 </div>
             </div>
         </div>
-        <div data-role="page" id="settings">
+        <div data-role="page" id="settings" data-theme="b">
             <div data-role="header"class="header">
                 <a href="#myAccount" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Settings</h2>
             </div>
             <div data-role="content" style="text-align:center">
-                <h2>Hello Username</h2>
+                <h2>Username</h2>
                 <img id="profileImage" src="img/user.png">
-                <button data-icon="arrow-u"class="ui-nodisc-icon" data-theme="b" style="width:30%; margin-left:35%;"></button>
-                <p>Upload Image</p>
+                <button data-icon="arrow-u" data-mini="true">Upload Image</button>
                 <p>Change Username</p>                
                 <p>Change Password</p>
                 <p>Contact Email</p>
@@ -169,34 +179,39 @@
 
             </div>
         </div>
-        <div data-role="page" id="Textbooks">
+        <div data-role="page" id="Textbooks"data-theme="b">
             <div data-role="header"class="header">
                 <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Textbooks</h2>
+                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
             </div>
         </div>
-        <div data-role="page" id="SportsTickets">
+        <div data-role="page" id="SportsTickets"data-theme="b">
             <div data-role="header"class="header">
                 <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Sports Tickets</h2>
+                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
             </div>
         </div>
-        <div data-role="page" id="Housing">
+        <div data-role="page" id="Housing"data-theme="b">
             <div data-role="header"class="header">
                 <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Housing/Parking</h2>
+                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
             </div>
         </div>
-        <div data-role="page" id="Furniture">
+        <div data-role="page" id="Furniture"data-theme="b">
             <div data-role="header"class="header">
                 <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Furniture</h2>
+                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
             </div>
         </div>
-        <div data-role="page" id="Transportation">
+        <div data-role="page" id="Transportation"data-theme="b">
             <div data-role="header"class="header">
                 <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Transportation</h2>
+                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
             </div>
         </div>
     </body>
