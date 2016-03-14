@@ -47,4 +47,20 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-
+function sellCategory(){
+    if($("#sellCategories input[type='radio']:checked").val()=='textbooks'){
+        document.getElementById("sellNext").href="#sellTextbooks";
+    }
+    else if($("#sellCategories input[type='radio']:checked").val()=='tickets'){
+        document.getElementById("sellNext").href="#sellTickets";
+    }
+    else if($("#sellCategories input[type='radio']:checked").val()=='housing'){
+        document.getElementById("sellNext").href="#sellHousing";
+    }
+    else if($("#sellCategories input[type='radio']:checked").val()=='furniture'){
+        document.getElementById("sellNext").href="#sellFurniture";
+    }
+    else{
+        document.getElementById("sellNext").href="#sellTransportation";        
+    }
+};

@@ -44,6 +44,9 @@
                 $.mobile.hashListeningEnabled = false;
                 $.mobile.pushStateEnabled = false;
             });
+            var back = function(){
+                document.getElementById('test').href="#mainPage";
+            }
         </script>
         <!-- Include the jQuery Mobile library -->
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -82,13 +85,13 @@
                 <a href="#homePage" data-transition="slide" data-icon="back" data-iconpos="notext"style="margin-top:5%;"></a>
                 <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Main Page</h2>
-            </div>
-            <div data-role="content">
-                <a href="#sellPage"data-role="button"style="float:left; margin-top:-2%; font-size:3.5vw;"><img src="img/Money.png" style="width:4.8vw;height:4.8vw;"> Sell</a>
-                 <span style="margin-left:3%;">UF</span>
-                <div style="margin-top:15%;">
+                <div style="width:80%;margin-left:10%;">
                     <input type="search" name="search" id="mainSearch"placeholder="Search">
                 </div>
+            </div>
+            <div data-role="content">
+                <a href="#sellPage"class="ui-btn ui-mini"style="float:left;"><img src="img/Money.png" style="width:20px;height:20px"> Sell</a>
+                 <span style="margin-left:3%;">UF</span>
                 <div id="mainCategoryButtons"data-role="controlgroup">
                     <a data-role="button" href="#Textbooks" data-transition="fade"><div data-role="content">
                             <div class="iconDiv"><img class="mainIcon" src="img/books.png"></div>
@@ -122,20 +125,57 @@
                 <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
             </div>
             <div data-role="content">
-                <fieldset data-role="controlgroup">
-                    <legend>What would you like to sell:</legend>
-                      <label for="textbooks">Textbooks</label>
-                      <input type="radio" name="category" id="textbooks" value="textbooks">
-                      <label for="tickets">Sports Tickets</label>
-                      <input type="radio" name="category" id="tickets" value="tickets"> 
-                      <label for="housing">Housing/Parking</label>
-                      <input type="radio" name="category" id="housing" value="housing"> 
-                      <label for="furniture">Furniture</label>
-                      <input type="radio" name="category" id="furniture" value="furniture"> 
-                      <label for="transportation">Transportation</label>
-                      <input type="radio" name="category" id="transportation" value="transportation"> 
-              </fieldset>
-                      <a href="#" data-role="button"data-icon="arrow-r">Next</a>
+                <form id="sellCategories">
+                    <fieldset data-role="controlgroup">
+                        <legend>What would you like to sell:</legend>
+                          <label for="textbooks">Textbooks</label>
+                          <input type="radio" name="category" id="textbooks" value="textbooks">
+                          <label for="tickets">Sports Tickets</label>
+                          <input type="radio" name="category" id="tickets" value="tickets"> 
+                          <label for="housing">Housing/Parking</label>
+                          <input type="radio" name="category" id="housing" value="housing"> 
+                          <label for="furniture">Furniture</label>
+                          <input type="radio" name="category" id="furniture" value="furniture"> 
+                          <label for="transportation">Transportation</label>
+                          <input type="radio" name="category" id="transportation" value="transportation"> 
+                    </fieldset>
+                </form>
+                      <a href="#" onclick="sellCategory()"data-role="button"data-icon="arrow-r" data-iconpos="right"id="sellNext">Next</a>
+            </div>
+        </div>
+        <div data-role="page" id="sellTextbooks" data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#sellPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Sell Textbooks</h2>
+                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>
+        </div>
+        <div data-role="page" id="sellTickets" data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#sellPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Sell Tickets</h2>
+                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>            
+        </div>
+        <div data-role="page" id="sellHousing" data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#sellPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Sell Housing</h2>
+                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>
+        </div>
+        <div data-role="page" id="sellFurniture" data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#sellPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Sell Furniture</h2>
+                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>
+        </div>
+        <div data-role="page" id="sellTransportation" data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#sellPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Sell Transportation</h2>
+                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
             </div>
         </div>
         <div data-role="page" id="myAccount" style="text-align:center;" data-theme="b">
@@ -146,19 +186,72 @@
             </div>
             <div data-role="content" style="margin-bottom:-8vh; margin-top:-3vh;">
                 <h2>Hello Username</h2>
-            </div>
+            </div><br>
             <div data-role="content"style="height:75vh;">
-                <div data-role="content"class="accountDiv"id="interestedIn">
-                    <u>Interested In</u>
-
+                <span style="float:left;"><u>Interested In</u></span><br>
+                <div class="accountDiv"id="interestedIn">
+                    <div class="accountItem">
+                        test
+                    </div>
+                    <div class="accountItem">
+                        test
+                    </div>
+                    <div class="accountItem">
+                        test
+                    </div>
+                    <div class="accountItem">
+                        test
+                    </div>
+                    <div class="accountItem">
+                        test
+                    </div>
+                    <div class="accountItem">
+                        test
+                    </div>
                 </div>
                 <hr class="line">
-                <div data-role="content"class="accountDiv"id="sellHistory">
-                    <u>Selling History</u>
+                <span style="float:left;"><u>Selling History</u></span><br>
+                <div class="accountDiv"id="sellHistory">
+                    <div class="accountItem">
+                        test
+                    </div>
+                    <div class="accountItem">
+                        test
+                    </div>
+                    <div class="accountItem">
+                        test
+                    </div>
+                    <div class="accountItem">
+                        test
+                    </div>
+                    <div class="accountItem">
+                        test
+                    </div>
+                    <div class="accountItem">
+                        test
+                    </div>
                 </div>
                 <hr class="line">
-                <div data-role="content"class="accountDiv"id="buyHistory">
-                    <u>Buying History</u>
+                <span style="float:left;"><u>Buying History</u></span><br>
+                <div class="accountDiv"id="buyHistory">
+                    <div class="accountItem">
+                        test
+                    </div>
+                    <div class="accountItem">
+                        test
+                    </div>
+                    <div class="accountItem">
+                        test
+                    </div>
+                    <div class="accountItem">
+                        test
+                    </div>
+                    <div class="accountItem">
+                        test
+                    </div>
+                    <div class="accountItem">
+                        test
+                    </div>
                 </div>
             </div>
         </div>
@@ -181,9 +274,21 @@
         </div>
         <div data-role="page" id="Textbooks"data-theme="b">
             <div data-role="header"class="header">
-                <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#"onclick="back()"data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;" id="test"></a>
                 <h2>Textbooks</h2>
                 <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+                <div style="margin-left:5%;width:80%;display:inline-block;">
+                    <input type="search" name="search"placeholder="Search">
+                </div>
+                <div style="width:20%;display:inline;">
+                    <button data-icon="arrow-d" data-iconpos="notext"></button>
+                </div>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview">
+                  <li><div>Item</div></li>
+                  <li><div>Item</div></li>
+                </ul>
             </div>
         </div>
         <div data-role="page" id="SportsTickets"data-theme="b">
@@ -191,6 +296,12 @@
                 <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Sports Tickets</h2>
                 <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+                <div style="margin-left:5%;width:80%;display:inline-block;">
+                    <input type="search" name="search"placeholder="Search">
+                </div>
+                <div style="width:20%;display:inline;">
+                    <button data-icon="arrow-d" data-iconpos="notext"></button>
+                </div>
             </div>
         </div>
         <div data-role="page" id="Housing"data-theme="b">
@@ -198,13 +309,26 @@
                 <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Housing/Parking</h2>
                 <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+                <div style="margin-left:5%;width:80%;display:inline-block;">
+                    <input type="search" name="search"placeholder="Search">
+                </div>
+                <div style="width:20%;display:inline;">
+                    <button data-icon="arrow-d" data-iconpos="notext"></button>
+                </div>
             </div>
+
         </div>
         <div data-role="page" id="Furniture"data-theme="b">
             <div data-role="header"class="header">
                 <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Furniture</h2>
                 <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+                <div style="margin-left:5%;width:80%;display:inline-block;">
+                    <input type="search" name="search"placeholder="Search">
+                </div>
+                <div style="width:20%;display:inline;">
+                    <button data-icon="arrow-d" data-iconpos="notext"></button>
+                </div>
             </div>
         </div>
         <div data-role="page" id="Transportation"data-theme="b">
@@ -212,6 +336,12 @@
                 <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Transportation</h2>
                 <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+                <div style="margin-left:5%;width:80%;display:inline-block;">
+                    <input type="search" name="search"placeholder="Search">
+                </div>
+                <div style="width:20%;display:inline;">
+                    <button data-icon="arrow-d" data-iconpos="notext"></button>
+                </div>
             </div>
         </div>
     </body>
