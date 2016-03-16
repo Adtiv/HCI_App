@@ -64,3 +64,96 @@ function sellCategory(){
         document.getElementById("sellNext").href="#sellTransportation";        
     }
 };
+var optionsOpenTextbooks=false;
+var optionsOpenTickets=false;
+var optionsOpenHousing=false;
+var optionsOpenFurniture=false;
+var optionsOpenTransportation=false;
+function openOptions(filterOptionsid){
+    var optionDiv = document.getElementById(filterOptionsid);
+    if(optionDiv.id=='filterOptionsTextbooks'){
+        var arrow = document.getElementById('arrowDtextbooks');     
+        if(optionsOpenTextbooks==false){
+            arrow.style.visibility='invisible'
+            arrow.style.display='none';
+            optionDiv.style.visibility='visible';
+            optionDiv.style.display='inline';
+            optionsOpenTextbooks=true;
+        }
+        else{
+            optionsOpenTextbooks=false;
+            arrow.style.visibility='visible';
+            arrow.style.display='inline';
+            optionDiv.style.visibility='invisible';
+            optionDiv.style.display='none';
+        }   
+    }
+    else if(optionDiv.id=='filterOptionsTickets'){
+        var arrow = document.getElementById('arrowDtickets');   
+        if(optionsOpenTickets==false){
+            arrow.style.visibility='invisible'
+            arrow.style.display='none';
+            optionDiv.style.visibility='visible';
+            optionDiv.style.display='inline';
+            optionsOpenTickets=true;
+        }
+        else{
+            optionsOpenTickets=false;
+            arrow.style.visibility='visible';
+            arrow.style.display='inline';
+            optionDiv.style.visibility='invisible';
+            optionDiv.style.display='none';
+        } 
+    }
+    else if(optionDiv.id=='filterOptionsHousing'){
+        var arrow = document.getElementById('arrowDhousing');        
+        if(optionsOpenHousing==false){
+            arrow.style.visibility='invisible'
+            arrow.style.display='none';
+            optionDiv.style.visibility='visible';
+            optionDiv.style.display='inline';
+            optionsOpenHousing=true;
+        }
+        else{
+            optionsOpenHousing=false;
+            arrow.style.visibility='visible';
+            arrow.style.display='inline';
+            optionDiv.style.visibility='invisible';
+            optionDiv.style.display='none';
+        }    
+    }
+    else if(optionDiv.id=='filterOptionsFurniture'){
+        var arrow = document.getElementById('arrowDfurniture');        
+        if(optionsOpenFurniture==false){
+            arrow.style.visibility='invisible'
+            arrow.style.display='none';
+            optionDiv.style.visibility='visible';
+            optionDiv.style.display='inline';
+            optionsOpenFurniture=true;
+        }
+        else{
+            optionsOpenFurniture=false;
+            arrow.style.visibility='visible';
+            arrow.style.display='inline';
+            optionDiv.style.visibility='invisible';
+            optionDiv.style.display='none';
+        }    
+    }
+    else if(optionDiv.id=='filterOptionsTransportation'){
+        var arrow = document.getElementById('arrowDtransportation');        
+        if(optionsOpenTransportation==false){
+            arrow.style.visibility='invisible'
+            arrow.style.display='none';
+            optionDiv.style.visibility='visible';
+            optionDiv.style.display='inline';
+            optionsOpenTransportation=true;
+        }
+        else{
+            optionsOpenTransportation=false;
+            arrow.style.visibility='visible';
+            arrow.style.display='inline';
+            optionDiv.style.visibility='invisible';
+            optionDiv.style.display='none';
+        } 
+    }
+}

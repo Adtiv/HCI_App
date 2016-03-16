@@ -91,7 +91,7 @@
             </div>
             <div data-role="content">
                 <a href="#sellPage"class="ui-btn ui-mini"style="float:left;"><img src="img/Money.png" style="width:20px;height:20px"> Sell</a>
-                 <span style="margin-left:3%;">UF</span>
+                <!--<span style="margin-left:3%;">UF</span>-->
                 <div id="mainCategoryButtons"data-role="controlgroup">
                     <a data-role="button" href="#Textbooks" data-transition="fade"><div data-role="content">
                             <div class="iconDiv"><img class="mainIcon" src="img/books.png"></div>
@@ -122,7 +122,7 @@
             <div data-role="header"class="header">
                 <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Sell</h2>
-                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#myAccount"data-transition="fade" data-icon="user" class="ui-btn-corner-all"style="margin-top:5%;">Account</a>
             </div>
             <div data-role="content">
                 <form id="sellCategories">
@@ -182,7 +182,7 @@
             <div data-role="header" class="header">
                 <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h1>My Account</h1>
-                <a href="#settings" data-role="button" data-transition="fade" data-icon="gear"data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#settings" data-role="button"class="ui-btn-corner-all" data-transition="fade" data-icon="gear"style="margin-top:5%;">Settings</a>
             </div>
             <div data-role="content" style="margin-bottom:-8vh; margin-top:-3vh;">
                 <h2>Hello Username</h2>
@@ -281,13 +281,29 @@
                     <input type="search" name="search"placeholder="Search">
                 </div>
                 <div style="width:20%;display:inline;">
-                    <button data-icon="arrow-d" data-iconpos="notext"></button>
+                    <button data-icon="arrow-d" style="visibility:visible;"data-iconpos="notext"id="arrowDtextbooks"onclick="openOptions('filterOptionsTextbooks')"></button>
+                </div>
+                <div style="visibility:hidden;display:none;"id="filterOptionsTextbooks">
+                    <br>
+                    <span>Filter options:</span>
+                    <form>
+                      <fieldset class="ui-field-contain">
+                        <label for="course">Select Course</label>
+                        <select name="course" id="course">
+                          <option value="COP3502">COP 3502</option>
+                          <option value="COP3503">COP 3503</option>
+                        </select>
+                      </fieldset>
+                      <!--<input type="submit" data-inline="true" value="Submit">-->
+                    </form>
+                    <button data-icon="arrow-u" data-iconpos="notext"id="arrowUtextbooks"onclick="openOptions('filterOptionsTextbooks')"></button>
                 </div>
             </div>
             <div data-role="content">
-                <ul data-role="listview">
-                  <li><div>Item</div></li>
-                  <li><div>Item</div></li>
+                <ul data-role="listview" data-inset="true">
+                  <li><a href="#buyPage"data-transition="fade"><img src="img/book.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Title<p>Price</p></div></a></li>
+                  <li><a href="#"><img src="img/book.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Title</div></a></li>
+                  <li><a href="#"><img src="img/book.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Title</div></a></li>
                 </ul>
             </div>
         </div>
@@ -300,7 +316,23 @@
                     <input type="search" name="search"placeholder="Search">
                 </div>
                 <div style="width:20%;display:inline;">
-                    <button data-icon="arrow-d" data-iconpos="notext"></button>
+                    <button data-icon="arrow-d" data-iconpos="notext"onclick="openOptions('filterOptionsTickets')"id="arrowDtickets"></button>
+                </div>
+                <div style="visibility:hidden;display:none;"id="filterOptionsTickets">
+                    <br>
+                    <span>Filter options:</span>
+                    <form>
+                      <fieldset class="ui-field-contain">
+                        <label for="course">Select Sport</label>
+                        <select name="course" id="course">
+                          <option value="COP3502">Football</option>
+                          <option value="COP3503">Basketball</option>
+                          <option value="COP3503">Baseball</option>
+                        </select>
+                      </fieldset>
+                      <!--<input type="submit" data-inline="true" value="Submit">-->
+                    </form>
+                    <button data-icon="arrow-u" data-iconpos="notext"id="arrowUtickets"onclick="openOptions('filterOptionsTickets')"></button>
                 </div>
             </div>
         </div>
@@ -313,7 +345,12 @@
                     <input type="search" name="search"placeholder="Search">
                 </div>
                 <div style="width:20%;display:inline;">
-                    <button data-icon="arrow-d" data-iconpos="notext"></button>
+                    <button data-icon="arrow-d" data-iconpos="notext"id="arrowDhousing"onclick="openOptions('filterOptionsHousing')"></button>
+                </div>
+                <div style="visibility:hidden;display:none;"id="filterOptionsHousing">
+                    <br>
+                    <span>Filter options:</span>
+                    <button data-icon="arrow-u" data-iconpos="notext"id="arrowUhousing"onclick="openOptions('filterOptionsHousing')"></button>
                 </div>
             </div>
 
@@ -327,7 +364,12 @@
                     <input type="search" name="search"placeholder="Search">
                 </div>
                 <div style="width:20%;display:inline;">
-                    <button data-icon="arrow-d" data-iconpos="notext"></button>
+                    <button data-icon="arrow-d" data-iconpos="notext"id="arrowDfurniture"onclick="openOptions('filterOptionsFurniture')"></button>
+                </div>
+                <div style="visibility:hidden;display:none;"id="filterOptionsFurniture">
+                    <br>
+                    <span>Filter options:</span>
+                    <button data-icon="arrow-u" data-iconpos="notext"id="arrowUfurniture"onclick="openOptions('filterOptionsFurniture')"></button>
                 </div>
             </div>
         </div>
@@ -340,8 +382,32 @@
                     <input type="search" name="search"placeholder="Search">
                 </div>
                 <div style="width:20%;display:inline;">
-                    <button data-icon="arrow-d" data-iconpos="notext"></button>
+                    <button data-icon="arrow-d" data-iconpos="notext"id="arrowDtransportation"onclick="openOptions('filterOptionsTransportation')"></button>
                 </div>
+                <div style="visibility:hidden;display:none;"id="filterOptionsTransportation">
+                    <br>
+                    <span>Filter options:</span>
+                    <button data-icon="arrow-u" data-iconpos="notext"id="arrowUtransportation"onclick="openOptions('filterOptionsTransportation')"></button>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="buyPage"data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Buy</h2>
+                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>
+            <div data-role="content" style="text-align:center;">
+                <h2><u>Item Title</u></h2>
+                <img src="img/book.jpg" style="width:250px;height:250px;">
+                <p>Description</p>
+                <p>Price</p>
+                <ul data-role="controlgroup" data-type="horizontal">
+                    <div class="ui-controlgroup-controls">
+                        <li><a data-role="button"href="#">Buy Now</a></li>
+                        <li><a data-role="button"href="#">Contact Seller</a></li>
+                    </div>
+                </ul>
             </div>
         </div>
     </body>
