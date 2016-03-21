@@ -21,6 +21,7 @@
 -->
 <html>
     <head>
+        <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
@@ -74,11 +75,37 @@
                 <a href="#homePage">
                     Done
                 </a>
+                <div data-role="content">
+                    <form>
+                      <div data-role="fieldcontain">
+                        <label for="email">E-mail:</label>
+                        <input type="text" name="email" id="emailLogin">
+                        <label for="password">Password:</label>
+                        <input type="text" name="password" id="passwordLogin">
+                      </div>
+                      <input type="submit" data-inline="true" value="Submit" onclick="login()">
+                    </form>
+                </div>
         </div>
         <div data-role"page" id="signUp">
                 <a href="#homePage">
                     Done
                 </a>
+                <div data-role="content">
+                    <form>
+                      <div data-role="fieldcontain">
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" id="username">       
+                        <label for="password">Password:</label>
+                        <input type="text" name="password" id="password">
+                        <label for="email">E-mail:</label>
+                        <input type="text" name="email" id="email">
+                        <label for="university">University:</label>
+                        <input type="text" name="university" id="university">
+                      </div>
+                      <input type="submit" data-inline="true" value="Submit" onclick="createUser()">
+                    </form>
+                </div>
         </div>
         <div data-role="page" id="mainPage" data-theme="b">
             <div data-role="header" class="header">
@@ -185,7 +212,7 @@
                 <a href="#settings" data-role="button"class="ui-btn-corner-all" data-transition="fade" data-icon="gear"style="margin-top:5%;">Settings</a>
             </div>
             <div data-role="content" style="margin-bottom:-8vh; margin-top:-3vh;">
-                <h2>Hello Username</h2>
+                <h2 id="accountUser">Hello Username</h2>
             </div><br>
             <div data-role="content"style="height:75vh;">
                 <span style="float:left;"><u>Interested In</u></span><br>

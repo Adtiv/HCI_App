@@ -16,6 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var database = new Firebase('https://campusbuyersclub.firebaseio.com/');
+var usersRef = database.child("users");
 var app = {
     // Application Constructor
     initialize: function() {
@@ -156,4 +158,50 @@ function openOptions(filterOptionsid){
             optionDiv.style.display='none';
         } 
     }
+}
+function createUser(){
+    var user = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    var email = document.getElementById('email').value;
+    var university = document.getElementById('university').value;
+    database.createUser({
+      email    : email,
+      password : password
+    }, function(error, userData) {
+      if (error) {
+        console.log("Error creating user:", error);
+      } else {
+        console.log("Successfully created user account with uid:", userData.uid);
+      }
+    });
+    usersRef.child(user).set({
+      username: user,
+      university: university,
+      email: email
+    });
+}
+function login(){
+    var email = document.getElementById('emailLogin').value;
+    var password = document.getElementById('passwordLogin').value;
+    database.authWithPassword({
+      email    : email,
+      password : password
+    }, function(error, authData) {
+      if (error) {
+        console.log("Login Failed!", error);
+      } else {
+        console.log("Authenticated successfully with payload:", authData);
+        $.mobile.changePage( "#mainPage", { transition: "fade"} );
+        retrieveUserInfo();
+      }
+    });
+}
+function retrieveUserInfo(){
+    /*
+    usersRef.child("users/Adtiv/username").on("value", function(snapshot) {
+      alert(snapshot.val());  // Alerts "San Francisco"
+      document.getElementById('accountUser').innerHTML = snapshot.val();
+    });
+*/
+
 }
