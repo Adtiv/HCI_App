@@ -18,6 +18,7 @@
  */
 var database = new Firebase('https://campusbuyersclub.firebaseio.com/');
 var usersRef = database.child("users");
+var email;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -160,9 +161,11 @@ function openOptions(filterOptionsid){
     }
 }
 function createUser(){
-    var user = document.getElementById('username').value;
+    var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
-    var email = document.getElementById('email').value;
+    email = document.getElementById('email').value;
+    var emailCharArray=email.split('');
+    var userID=createUserIDfromEmail(emailCharArray);
     var university = document.getElementById('university').value;
     database.createUser({
       email    : email,
@@ -174,14 +177,29 @@ function createUser(){
         console.log("Successfully created user account with uid:", userData.uid);
       }
     });
-    usersRef.child(user).set({
-      username: user,
+    usersRef.child(userID).set({
+      username: username,
       university: university,
       email: email
     });
+    $.mobile.changePage( "#mainPage", { transition: "fade"} );
+    retrieveUserInfo(userID);
+
+}
+function createUserIDfromEmail(emailArray){
+    var emailID=[];
+    var i=0;
+    while(emailArray[i]!='@'){
+        emailID.push(emailArray[i]);
+        i++;
+    }
+    var str = emailID.join("");
+    return str;
 }
 function login(){
-    var email = document.getElementById('emailLogin').value;
+    email = document.getElementById('emailLogin').value;
+    var emailCharArray=email.split('');
+    var userID=createUserIDfromEmail(emailCharArray);
     var password = document.getElementById('passwordLogin').value;
     database.authWithPassword({
       email    : email,
@@ -192,16 +210,14 @@ function login(){
       } else {
         console.log("Authenticated successfully with payload:", authData);
         $.mobile.changePage( "#mainPage", { transition: "fade"} );
-        retrieveUserInfo();
+        retrieveUserInfo(userID);
       }
     });
 }
-function retrieveUserInfo(){
-    /*
-    usersRef.child("users/Adtiv/username").on("value", function(snapshot) {
-      alert(snapshot.val());  // Alerts "San Francisco"
-      document.getElementById('accountUser').innerHTML = snapshot.val();
+function retrieveUserInfo(userID){
+    var getUser = userID+"/username"; 
+    usersRef.child(getUser).on("value", function(snapshot) {
+        document.getElementById('accountUser').innerHTML = "Hello " + snapshot.val();
     });
-*/
 
 }
