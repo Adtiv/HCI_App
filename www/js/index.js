@@ -18,7 +18,13 @@
  */
 var database = new Firebase('https://campusbuyersclub.firebaseio.com/');
 var usersRef = database.child("users");
+var textbooksRef = database.child("textbooks");
+var ticketsRef = database.child("tickets");
+var housingParkingRef = database.child("housing/parking");
+var furnitureRef = database.child("furniture");
+var transportationRef = database.child("transportation");
 var email;
+var currentUser;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -166,6 +172,7 @@ function createUser(){
     email = document.getElementById('email').value;
     var emailCharArray=email.split('');
     var userID=createUserIDfromEmail(emailCharArray);
+    currentUser=userID;
     var university = document.getElementById('university').value;
     database.createUser({
       email    : email,
@@ -200,6 +207,7 @@ function login(){
     email = document.getElementById('emailLogin').value;
     var emailCharArray=email.split('');
     var userID=createUserIDfromEmail(emailCharArray);
+    currentUser=userID;
     var password = document.getElementById('passwordLogin').value;
     database.authWithPassword({
       email    : email,
@@ -219,5 +227,23 @@ function retrieveUserInfo(userID){
     usersRef.child(getUser).on("value", function(snapshot) {
         document.getElementById('accountUser').innerHTML = "Hello " + snapshot.val();
     });
-
+}
+function postItem(item){
+    var title,description,price;
+    if(item=='textbook'){
+        title=document.getElementById('textBookTitle').value;
+        description = document.getElementById('textBookDescription').value;
+        price = document.getElementById('textBookPrice').value;
+        textbooksRef.child(currentUser).set({
+          title: title,
+          description: description,
+          price: price
+        });
+        textbooksRef.on("child_added", function(snapshot, prevChildKey) {
+          var newPost = snapshot.val();
+          console.log("Author: " + newPost.title);
+          console.log("Title: " + newPost.description);
+          console.log("Previous Post ID: " + prevChildKey);
+        });
+    }
 }
