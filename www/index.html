@@ -110,14 +110,16 @@
         <div data-role="page" id="mainPage" data-theme="b">
             <div data-role="header" class="header">
                 <a href="#homePage" data-transition="slide" data-icon="back" data-iconpos="notext"style="margin-top:5%;"></a>
-                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
-                <h2>Main Page</h2>
-                <div style="width:80%;margin-left:10%;">
+                <a href="#myAccount"data-transition="fade" data-icon="user" class="ui-btn-corner-all"style="margin-top:5%;">Account</a>
+                <div style="text-align:center;"><img src="img/gator.png" style="width:25px;height:25px;margin-bottom:-20px;"></div>
+                <div style="width:80%;margin-left:10%;margin-top:30px">
                     <input type="search" name="search" id="mainSearch"placeholder="Search">
                 </div>
             </div>
             <div data-role="content">
-                <a href="#sellPage"class="ui-btn ui-mini"style="float:left;"><img src="img/Money.png" style="width:20px;height:20px"> Sell</a>
+                <div data-role="controlgroup">
+                    <a href="#sellPage"class="ui-btn"style="margin-top:-10px;"><img src="img/Money.png" style="width:20px;height:20px"> Sell</a>
+                </div>
                 <!--<span style="margin-left:3%;">UF</span>-->
                 <div id="mainCategoryButtons"data-role="controlgroup">
                     <a data-role="button" href="#Textbooks" data-transition="fade"><div data-role="content">
@@ -179,12 +181,17 @@
             <div data-role="content">
                 <form>
                   <div data-role="fieldcontain">
+                    <button class="ui-btn-mini">Upload Photo</button>
                     <label for="textBookTitle">Title:</label>
                     <input type="text" name="textBookTitle" id="textBookTitle">
                     <label for="textBookDescription">Description:</label>
                     <input type="text" name="textbookDescription" id="textBookDescription">
                     <label for="textBookPrice">Price:</label>
                     <input type="text" name="textbookPrice" id="textBookPrice">
+                    <label for="textBookISBN">ISBN(Optional):</label>
+                    <input type="text" name="textbookISBN" id="textBookISBN">
+                    <label for="textBookCourse">Course Number(Optional):</label>
+                    <input type="text" name="textbookCourse" id="textBookCourse">
                   </div>
                   <input type="submit" data-inline="true" value="Sell Now" onclick="postItem('textbook')">
                 </form>
@@ -231,66 +238,53 @@
                 <span style="float:left;"><u>Interested In</u></span><br>
                 <div class="accountDiv"id="interestedIn">
                     <div class="accountItem">
-                        test
                     </div>
                     <div class="accountItem">
-                        test
                     </div>
                     <div class="accountItem">
-                        test
                     </div>
                     <div class="accountItem">
-                        test
                     </div>
                     <div class="accountItem">
-                        test
                     </div>
                     <div class="accountItem">
-                        test
                     </div>
                 </div>
                 <hr class="line">
                 <span style="float:left;"><u>Selling History</u></span><br>
                 <div class="accountDiv"id="sellHistory">
                     <div class="accountItem">
-                        test
+                        <img src="img/book.jpg" style="width:75px;height:75px;margin-bottom:17px;">
                     </div>
                     <div class="accountItem">
-                        test
                     </div>
                     <div class="accountItem">
-                        test
+                        
                     </div>
                     <div class="accountItem">
-                        test
+                        
                     </div>
                     <div class="accountItem">
-                        test
+                        
                     </div>
                     <div class="accountItem">
-                        test
+                        
                     </div>
                 </div>
                 <hr class="line">
                 <span style="float:left;"><u>Buying History</u></span><br>
                 <div class="accountDiv"id="buyHistory">
                     <div class="accountItem">
-                        test
                     </div>
                     <div class="accountItem">
-                        test
                     </div>
                     <div class="accountItem">
-                        test
                     </div>
                     <div class="accountItem">
-                        test
                     </div>
                     <div class="accountItem">
-                        test
                     </div>
                     <div class="accountItem">
-                        test
                     </div>
                 </div>
             </div>
@@ -342,8 +336,6 @@
             <div data-role="content">
                 <ul data-role="listview" data-inset="true" id="textBookList">
                   <li><a href="#buyPage"data-transition="fade"><img src="img/book.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Title<p>Price</p></div></a></li>
-                  <li><a href="#"><img src="img/book.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Title</div></a></li>
-                  <li><a href="#"><img src="img/book.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Title</div></a></li>
                 </ul>
             </div>
         </div>
@@ -438,7 +430,7 @@
                 <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
             </div>
             <div data-role="content" style="text-align:center;">
-                <h2><u>Item Title</u></h2>
+                <h2><u>Title</u></h2>
                 <img src="img/book.jpg" style="width:250px;height:250px;">
                 <p>Description</p>
                 <p>Price</p>
