@@ -176,6 +176,19 @@
                 <h2>Sell Textbooks</h2>
                 <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
             </div>
+            <div data-role="content">
+                <form>
+                  <div data-role="fieldcontain">
+                    <label for="textBookTitle">Title:</label>
+                    <input type="text" name="textBookTitle" id="textBookTitle">
+                    <label for="textBookDescription">Description:</label>
+                    <input type="text" name="textbookDescription" id="textBookDescription">
+                    <label for="textBookPrice">Price:</label>
+                    <input type="text" name="textbookPrice" id="textBookPrice">
+                  </div>
+                  <input type="submit" data-inline="true" value="Sell Now" onclick="postItem('textbook')">
+                </form>
+            </div>
         </div>
         <div data-role="page" id="sellTickets" data-theme="b">
             <div data-role="header"class="header">
@@ -327,7 +340,7 @@
                 </div>
             </div>
             <div data-role="content">
-                <ul data-role="listview" data-inset="true">
+                <ul data-role="listview" data-inset="true" id="textBookList">
                   <li><a href="#buyPage"data-transition="fade"><img src="img/book.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Title<p>Price</p></div></a></li>
                   <li><a href="#"><img src="img/book.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Title</div></a></li>
                   <li><a href="#"><img src="img/book.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Title</div></a></li>

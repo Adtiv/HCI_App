@@ -1,8 +1,15 @@
 {
+<<<<<<< HEAD
     "cordova-plugin-whitelist": {
         "source": {
             "type": "registry",
             "id": "cordova-plugin-whitelist@1"
+=======
+    "cordova-plugin-camera": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-camera"
+>>>>>>> origin/master
         },
         "is_top_level": true,
         "variables": {}

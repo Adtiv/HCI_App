@@ -17,8 +17,16 @@
  * under the License.
  */
 var database = new Firebase('https://campusbuyersclub.firebaseio.com/');
-var usersRef = database.child("users");
+var users = database.child("users");
+var textbooks;
+var tickets;
+var housingParking;
+var furniture;
+var transportation;
 var email;
+var dbUniversity;
+var userUniversity;
+var currentUser;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -50,6 +58,38 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+function initialize(){
+    database.once("value", function(snapshot) {
+        userUniversity=localStorage.getItem('userUniversity');  
+        console.log(userUniversity);
+        var posts = snapshot.child(userUniversity);
+        var x = posts.child('textbooks');
+        x.forEach(function(childSnapshot) {
+            var title =childSnapshot.child("title").val();
+            var price = childSnapshot.child("price").val();
+            
+            var list = document.getElementById('textBookList');
+            var entry = document.createElement('li');
+            var link = document.createElement('a');
+            var div = document.createElement('div');
+            var img =document.createElement('img');
+            var p =document.createElement('p');
+            link.href="#buyPage";
+            img.src="img/book.jpg";
+            img.style.width="100px";
+            img.style.height="100px";
+            div.style.textAlign ="center";
+            div.innerHTML=title;
+            p.innerHTML=price;
+            list.appendChild(entry);
+            entry.appendChild(link);
+            link.appendChild(img);
+            link.appendChild(div);
+            div.appendChild(p);
+      });
+    });
+    $('#textBookList').listview('refresh');
+}
 function sellCategory(){
     if($("#sellCategories input[type='radio']:checked").val()=='textbooks'){
         document.getElementById("sellNext").href="#sellTextbooks";
@@ -166,6 +206,7 @@ function createUser(){
     email = document.getElementById('email').value;
     var emailCharArray=email.split('');
     var userID=createUserIDfromEmail(emailCharArray);
+    currentUser=userID;
     var university = document.getElementById('university').value;
     database.createUser({
       email    : email,
@@ -177,7 +218,7 @@ function createUser(){
         console.log("Successfully created user account with uid:", userData.uid);
       }
     });
-    usersRef.child(userID).set({
+    users.child(userID).set({
       username: username,
       university: university,
       email: email
@@ -200,6 +241,7 @@ function login(){
     email = document.getElementById('emailLogin').value;
     var emailCharArray=email.split('');
     var userID=createUserIDfromEmail(emailCharArray);
+    currentUser=userID;
     var password = document.getElementById('passwordLogin').value;
     database.authWithPassword({
       email    : email,
@@ -213,11 +255,80 @@ function login(){
         retrieveUserInfo(userID);
       }
     });
+    initialize();
 }
 function retrieveUserInfo(userID){
-    var getUser = userID+"/username"; 
-    usersRef.child(getUser).on("value", function(snapshot) {
+    var getUser = userID+"/username";
+    var getUniversity= userID+"/university"; 
+    users.child(getUser).on("value", function(snapshot) {
         document.getElementById('accountUser').innerHTML = "Hello " + snapshot.val();
     });
-
+    users.child(getUniversity).on("value", function(snapshot) {
+        userUniversity=snapshot.val();
+        localStorage.setItem('userUniversity',userUniversity);
+    });
+}
+function postItem(item){
+    var title,description,price;
+    dbUniversity = database.child(userUniversity);
+    if(item=='textbook'){
+        textbooks=dbUniversity.child("textbooks");
+        title=document.getElementById('textBookTitle').value;
+        description = document.getElementById('textBookDescription').value;
+        price = document.getElementById('textBookPrice').value;
+        var min=0;
+        var max=10000000;
+        var x = Math.floor(Math.random() * (max - min)) + min;
+        textbookId=currentUser+"_"+x.toString();
+        textbooks.child(textbookId).set({
+          title: title,
+          description: description,
+          price: price
+        });
+        var list = document.getElementById('textBookList');
+        var entry = document.createElement('li');
+        var link = document.createElement('a');
+        var div = document.createElement('div');
+        var img =document.createElement('img');
+        var p =document.createElement('p');
+        link.href="#buyPage";
+        img.src="img/book.jpg";
+        img.style.width="100px";
+        img.style.height="100px";
+        div.style.textAlign ="center";
+        div.innerHTML=title;
+        p.innerHTML=price;
+        list.appendChild(entry);
+        entry.appendChild(link);
+        link.appendChild(img);
+        link.appendChild(div);
+        div.appendChild(p);
+        $('#textBookList').listview('refresh');
+        textbooks.on("child_added", function(snapshot, prevChildKey) {
+          var newPost = snapshot.val();
+          console.log("Author: " + newPost.title);
+          console.log("Title: " + newPost.description);
+          console.log("Previous Post ID: " + prevChildKey);
+          
+        });
+        $.mobile.changePage( "#mainPage", { transition: "fade"} );
+    }
+    /*
+    if(item=='tickets'){
+        title=document.getElementById('textBookTitle').value;
+        description = document.getElementById('textBookDescription').value;
+        price = document.getElementById('textBookPrice').value;
+        textbooksRef.child(currentUser).set({
+          title: title,
+          description: description,
+          price: price
+        });
+        ticketsRef.on("child_added", function(snapshot, prevChildKey) {
+          var newPost = snapshot.val();
+          console.log("Author: " + newPost.title);
+          console.log("Title: " + newPost.description);
+          console.log("Previous Post ID: " + prevChildKey);
+        });
+    }
+    */
 }
