@@ -60,19 +60,18 @@
     <body>
         <div data-role="page" id="homePage">
             <div data-role="content" id="search">
-                HomePageee
-                <a href="#mainPage" data-transition="fade">Next</a>
+                <a href="#mainPage" data-transition="none">Next</a>
                 <div data-role="content"class="search">
                     <input type="search" name="search" id="search"placeholder="Search for your University">
                 </div>
             </div>
             <div data-role="content" style="text-align:center;">
-                <a href="#login"><i>Log in</i></a><br><br>
-                <a href="#signUp"><i>Sign up</i></a>
+                <a href="#login" data-transition="none"><i>Log in</i></a><br><br>
+                <a href="#signUp" data-transition="none"><i>Sign up</i></a>
             </div>
         </div>
         <div data-role"page" id="login">
-                <a href="#homePage">
+                <a href="#homePage" data-transition="none">
                     Done
                 </a>
                 <div data-role="content">
@@ -83,16 +82,16 @@
                         <label for="password">Password:</label>
                         <input type="text" name="password" id="passwordLogin">
                       </div>
-                      <input type="submit" data-inline="true" value="Submit" onclick="login()">
+                      <a href="#mainPage" type="submit" value="Submit" data-role="button"  data-transition="none" onclick="login()">submit
+                      </a>
+                      <!-- <input type="submit" data-inline="true" value="Submit" onclick="login()"> -->
                     </form>
                 </div>
         </div>
         <div data-role"page" id="signUp">
-                <a href="#homePage">
-                    Done
-                </a>
+                
                 <div data-role="content">
-                    <form>
+                    <form >
                       <div data-role="fieldcontain">
                         <label for="username">Username:</label>
                         <input type="text" name="username" id="username">       
@@ -103,14 +102,19 @@
                         <label for="university">University:</label>
                         <input type="text" name="university" id="university">
                       </div>
-                      <input type="submit" data-inline="true" value="Submit" onclick="createUser()">
+                      <a href="#mainPage" type="submit" value="Submit" data-role="button"  data-transition="none" onclick="createUser()">Submit
+                      </a>
+                     <!--  <input type="submit" data-inline="true" value="Submit" onclick="createUser()"> -->
                     </form>
+                    <a href="#homePage" data-role="button"  data-transition="none">
+                    Cancel
+                </a>
                 </div>
         </div>
         <div data-role="page" id="mainPage" data-theme="b">
             <div data-role="header" class="header">
-                <a href="#homePage" data-transition="slide" data-icon="back" data-iconpos="notext"style="margin-top:5%;"></a>
-                <a href="#myAccount"data-transition="fade" data-icon="user" class="ui-btn-corner-all"style="margin-top:5%;">Account</a>
+                <a href="#homePage" data-transition="none" data-icon="back" data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#myAccount"data-transition="none" data-icon="user" class="ui-btn-corner-all"style="margin-top:5%;">Account</a>
                 <div style="text-align:center;"><img src="img/gator.png" style="width:25px;height:25px;margin-bottom:-20px;"></div>
                 <div style="width:80%;margin-left:10%;margin-top:30px">
                     <input type="search" name="search" id="mainSearch"placeholder="Search">
@@ -118,29 +122,29 @@
             </div>
             <div data-role="content">
                 <div data-role="controlgroup">
-                    <a href="#sellPage"class="ui-btn"style="margin-top:-10px;"><img src="img/Money.png" style="width:20px;height:20px"> Sell</a>
+                    <a href="#sellPage"class="ui-btn"style="margin-top:-10px;" data-transition="none"><img src="img/Money.png" style="width:20px;height:20px">Sell</a>
                 </div>
                 <!--<span style="margin-left:3%;">UF</span>-->
-                <div id="mainCategoryButtons"data-role="controlgroup">
-                    <a data-role="button" href="#Textbooks" data-transition="fade"><div data-role="content">
+                <div id="mainCategoryButtons" data-role="controlgroup">
+                    <a data-role="button" href="#Textbooks" data-transition="none"><div data-role="content">
                             <div class="iconDiv"><img class="mainIcon" src="img/books.png"></div>
                             <div style="display:inline-block;margin-top:2%">Textbooks</div>
                     </div></a>
-                    <a data-role="button" href="#SportsTickets" data-transition="fade"><div data-role="content">
+                    <a data-role="button" href="#SportsTickets" data-transition="none"><div data-role="content">
                             <div class="iconDiv"><img class="mainIcon" src="img/tickets.png"></div>
                             <div style="display:inline-block;margin-top:2%">Sports Tickets</div>
                     </div></a>
-                    <a data-role="button" href="#Housing" data-transition="fade"><div data-role="content">
+                    <a data-role="button" href="#Housing" data-transition="none"><div data-role="content">
                         <div>
                             <div class="iconDiv"><img class="mainIcon" src="img/house.png"></div>
                             <div style="display:inline-block;margin-top:2%">Housing/Parking</div>
                         </div>
                     </div></a>
-                    <a data-role="button" href="#Furniture" data-transition="fade"><div data-role="content">
+                    <a data-role="button" href="#Furniture" data-transition="none"><div data-role="content">
                             <div class="iconDiv"><img class="mainIcon" src="img/Couch.png"></div>
                             <div style="display:inline-block;margin-top:2%">Furniture</div>
                     </div></a>
-                    <a data-role="button" href="#Transportation" data-transition="fade"><div class="mainCategory"data-role="content">
+                    <a data-role="button" href="#Transportation" data-transition="none"><div class="mainCategory"data-role="content">
                             <div class="iconDiv"><img class="mainIcon" src="img/bike.png"></div>
                             <div style="display:inline-block;margin-top:2%">Transportation</div>
                     </div></a>
@@ -149,9 +153,9 @@
         </div>
         <div data-role="page" id="sellPage" data-theme="b">
             <div data-role="header"class="header">
-                <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#mainPage" data-transition="none" data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Sell</h2>
-                <a href="#myAccount"data-transition="fade" data-icon="user" class="ui-btn-corner-all"style="margin-top:5%;">Account</a>
+                <a href="#myAccount"data-transition="none" data-icon="user" class="ui-btn-corner-all"style="margin-top:5%;">Account</a>
             </div>
             <div data-role="content">
                 <form id="sellCategories">
@@ -169,19 +173,23 @@
                           <input type="radio" name="category" id="transportation" value="transportation"> 
                     </fieldset>
                 </form>
-                      <a href="#" onclick="sellCategory()"data-role="button"data-icon="arrow-r" data-iconpos="right"id="sellNext">Next</a>
+                      <a href="#" onclick="sellCategory()"data-role="button"data-icon="arrow-r" data-iconpos="right"id="sellNext" data-transition="none">Next</a>
             </div>
         </div>
         <div data-role="page" id="sellTextbooks" data-theme="b">
             <div data-role="header"class="header">
-                <a href="#sellPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#sellPage" data-transition="none"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Sell Textbooks</h2>
-                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
             </div>
             <div data-role="content">
                 <form>
                   <div data-role="fieldcontain">
-                    <button class="ui-btn-mini">Upload Photo</button>
+                    <img style="display:none;width:125px;height:125px;margin-left:auto;margin-right:auto;" id="smallImage" src="" />
+                    <img style="display:none;" id="largeImage" src="" />
+                    <!-- <button class="ui-btn-mini" onclick="capturePhoto();">Upload Photo</button> -->
+                    <a href="#sellTextbooks" class="ui-btn-mini" data-role="button" data-transition="none" onclick="capturePhoto()">Upload Photo
+                      </a>
                     <label for="textBookTitle">Title:</label>
                     <input type="text" name="textBookTitle" id="textBookTitle">
                     <label for="textBookDescription">Description:</label>
@@ -193,43 +201,45 @@
                     <label for="textBookCourse">Course Number(Optional):</label>
                     <input type="text" name="textbookCourse" id="textBookCourse">
                   </div>
-                  <input type="submit" data-inline="true" value="Sell Now" onclick="postItem('textbook')">
+                  <!-- <input type="submit" data-inline="true" value="Sell Now" onclick="postItem('textbook')"> -->
+                  <a href="#mainPage" class="ui-btn-mini;" data-role="button" data-transition="none" onclick="postItem('textbook')">Sell Now
+                      </a>
                 </form>
             </div>
         </div>
         <div data-role="page" id="sellTickets" data-theme="b">
             <div data-role="header"class="header">
-                <a href="#sellPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#sellPage" data-transition="none"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Sell Tickets</h2>
-                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
             </div>            
         </div>
         <div data-role="page" id="sellHousing" data-theme="b">
             <div data-role="header"class="header">
-                <a href="#sellPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#sellPage" data-transition="none"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Sell Housing</h2>
-                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
             </div>
         </div>
         <div data-role="page" id="sellFurniture" data-theme="b">
             <div data-role="header"class="header">
-                <a href="#sellPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#sellPage" data-transition="none"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Sell Furniture</h2>
-                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
             </div>
         </div>
         <div data-role="page" id="sellTransportation" data-theme="b">
             <div data-role="header"class="header">
-                <a href="#sellPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#sellPage" data-transition="none"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Sell Transportation</h2>
-                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
             </div>
         </div>
         <div data-role="page" id="myAccount" style="text-align:center;" data-theme="b">
             <div data-role="header" class="header">
-                <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#mainPage" data-transition="none"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h1>My Account</h1>
-                <a href="#settings" data-role="button"class="ui-btn-corner-all" data-transition="fade" data-icon="gear"style="margin-top:5%;">Settings</a>
+                <a href="#settings" data-role="button"class="ui-btn-corner-all" data-transition="none" data-icon="gear"style="margin-top:5%;" data-transition="none">Settings</a>
             </div>
             <div data-role="content" style="margin-bottom:-8vh; margin-top:-3vh;">
                 <h2 id="accountUser">Hello Username</h2>
@@ -291,13 +301,36 @@
         </div>
         <div data-role="page" id="settings" data-theme="b">
             <div data-role="header"class="header">
-                <a href="#myAccount" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#myAccount" data-transition="none"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Settings</h2>
             </div>
             <div data-role="content" style="text-align:center">
                 <h2>Username</h2>
                 <img id="profileImage" src="img/user.png">
-                <button data-icon="arrow-u" data-mini="true">Upload Image</button>
+                <!-- <button data-icon="arrow-u" data-mini="true">Upload Image</button> -->
+                <a href="#settingsWImage" data-icon="arrow-u" data-mini="true" class="ui-btn-mini" data-role="button" data-transition="none" onclick="captureProfilePhoto()">Upload Image
+                </a>
+                <p>Change Username</p>                
+                <p>Change Password</p>
+                <p>Contact Email</p>
+                <p>Contact Number(Optional)</p>
+                <p>University</p>
+
+            </div>
+        </div>
+        <div data-role="page" id="settingsWImage" data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#myAccount" data-transition="none"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Settings</h2>
+            </div>
+            <div data-role="content" style="text-align:center">
+                <h2>Username</h2>
+                
+                <!-- <button data-icon="arrow-u" data-mini="true">Upload Image</button> --> 
+                <img style="display:none;width:200px;height:200px;margin-left:auto;margin-right:auto;" id="profImage" src="" />
+                <img style="display:none;" id="largeImage" src="" />
+                <a href="#settingsWImage" data-icon="arrow-u" data-mini="true" class="ui-btn-mini" data-role="button" data-transition="none" onclick="captureProfilePhoto()">Change Image
+                </a>
                 <p>Change Username</p>                
                 <p>Change Password</p>
                 <p>Contact Email</p>
@@ -308,9 +341,9 @@
         </div>
         <div data-role="page" id="Textbooks"data-theme="b">
             <div data-role="header"class="header">
-                <a href="#"onclick="back()"data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;" id="test"></a>
+                <a href="#"onclick="back()"data-transition="none"data-icon="back"data-iconpos="notext"style="margin-top:5%;" id="test"></a>
                 <h2>Textbooks</h2>
-                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
                 <div style="margin-left:5%;width:80%;display:inline-block;">
                     <input type="search" name="search"placeholder="Search">
                 </div>
@@ -335,15 +368,15 @@
             </div>
             <div data-role="content">
                 <ul data-role="listview" data-inset="true" id="textBookList">
-                  <li><a href="#buyPage"data-transition="fade"><img src="img/book.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Title<p>Price</p></div></a></li>
+                  <li><a href="#buyPage"data-transition="none"><img src="img/book.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Title<p>Price</p></div></a></li>
                 </ul>
             </div>
         </div>
         <div data-role="page" id="SportsTickets"data-theme="b">
             <div data-role="header"class="header">
-                <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#mainPage" data-transition="none"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Sports Tickets</h2>
-                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
                 <div style="margin-left:5%;width:80%;display:inline-block;">
                     <input type="search" name="search"placeholder="Search">
                 </div>
@@ -370,9 +403,9 @@
         </div>
         <div data-role="page" id="Housing"data-theme="b">
             <div data-role="header"class="header">
-                <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#mainPage" data-transition="none"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Housing/Parking</h2>
-                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
                 <div style="margin-left:5%;width:80%;display:inline-block;">
                     <input type="search" name="search"placeholder="Search">
                 </div>
@@ -389,9 +422,9 @@
         </div>
         <div data-role="page" id="Furniture"data-theme="b">
             <div data-role="header"class="header">
-                <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#mainPage" data-transition="none"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Furniture</h2>
-                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
                 <div style="margin-left:5%;width:80%;display:inline-block;">
                     <input type="search" name="search"placeholder="Search">
                 </div>
@@ -407,9 +440,9 @@
         </div>
         <div data-role="page" id="Transportation"data-theme="b">
             <div data-role="header"class="header">
-                <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#mainPage" data-transition="none"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Transportation</h2>
-                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
                 <div style="margin-left:5%;width:80%;display:inline-block;">
                     <input type="search" name="search"placeholder="Search">
                 </div>
@@ -425,9 +458,9 @@
         </div>
         <div data-role="page" id="buyPage"data-theme="b">
             <div data-role="header"class="header">
-                <a href="#mainPage" data-transition="slide"data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#mainPage" data-transition="none" data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
                 <h2>Buy</h2>
-                <a href="#myAccount"data-transition="fade" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
             </div>
             <div data-role="content" style="text-align:center;">
                 <h2><u>Title</u></h2>
@@ -436,8 +469,8 @@
                 <p>Price</p>
                 <ul data-role="controlgroup" data-type="horizontal">
                     <div class="ui-controlgroup-controls">
-                        <li><a data-role="button"href="#">Buy Now</a></li>
-                        <li><a data-role="button"href="#">Contact Seller</a></li>
+                        <li><a data-role="button"href="#" data-transition="none">Buy Now</a></li>
+                        <li><a data-role="button"href="#" data-transition="none">Contact Seller</a></li>
                     </div>
                 </ul>
             </div>

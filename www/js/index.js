@@ -27,6 +27,8 @@ var email;
 var dbUniversity;
 var userUniversity;
 var currentUser;
+var pictureSource;
+var destinationType;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -223,7 +225,7 @@ function createUser(){
       university: university,
       email: email
     });
-    $.mobile.changePage( "#mainPage", { transition: "fade"} );
+    
     retrieveUserInfo(userID);
 
 }
@@ -269,13 +271,14 @@ function retrieveUserInfo(userID){
     });
 }
 function postItem(item){
-    var title,description,price;
+    var title,description,price, textbookImage;
     dbUniversity = database.child(userUniversity);
     if(item=='textbook'){
         textbooks=dbUniversity.child("textbooks");
         title=document.getElementById('textBookTitle').value;
         description = document.getElementById('textBookDescription').value;
         price = document.getElementById('textBookPrice').value;
+        textbookImage = document.getElementById('smallImage').src;
         var min=0;
         var max=10000000;
         var x = Math.floor(Math.random() * (max - min)) + min;
@@ -283,7 +286,8 @@ function postItem(item){
         textbooks.child(textbookId).set({
           title: title,
           description: description,
-          price: price
+          price: price,
+          textbookImage: textbookImage
         });
         var list = document.getElementById('textBookList');
         var entry = document.createElement('li');
@@ -331,4 +335,51 @@ function postItem(item){
         });
     }
     */
+}
+var pictureSource;
+var destinationType;
+
+function onPhotoDataSuccess(imageData) {
+    var smallImage = document.getElementById('smallImage');
+    smallImage.style.display = 'block';
+    smallImage.src = "data: image/jpeg;base64," + imageData;
+}
+function onProfilePhotoDataSuccess(imageData) {
+    var profImage = document.getElementById('profImage');
+    profImage.style.display = 'block';
+    profImage.src = "data: image/jpeg;base64," + imageData;
+}
+function onPhotoURISuccess(imageURI) {
+    var largeImage = document.getElementById('largeImage');
+    largeImage.style.display = 'block';
+    largeImage.src = imageURI;
+}
+function capturePhoto() {
+    pictureSource = navigator.camera.PictureSourceType;
+    destinationType = navigator.camera.DestinationType;
+    navigator.camera.getPicture(onPhotoDataSuccess, onFail, {quality: 50,
+        destinationType: destinationType.DATA_URL
+    });
+    //alert('capturePhoto was called');
+}
+function captureProfilePhoto() {
+    pictureSource = navigator.camera.PictureSourceType;
+    destinationType = navigator.camera.DestinationType;
+    navigator.camera.getPicture(onProfilePhotoDataSuccess, onFail, {quality: 50,
+        destinationType: destinationType.DATA_URL
+    });
+    //alert('capturePhoto was called');
+}
+
+function getPhoto(source) {
+    pictureSource = navigator.camera.PictureSourceType;
+    destinationType = navigator.camera.DestinationType;
+    navigator.camera.getPicture(onPhotoURISuccess, onFail, {quality: 50,
+        destinationType: destinationType.FILE_URI,
+        sourceType: source
+    });
+    alert('getPicture was called');
+}
+function onFail(message) {
+    alert('Failed because: ' + message);
 }
