@@ -248,6 +248,7 @@
                 <span style="float:left;"><u>Interested In</u></span><br>
                 <div class="accountDiv"id="interestedIn">
                     <div class="accountItem">
+                        <img src="img/progbook.jpg" style="width:75px;height:75px;margin-bottom:17px;">
                     </div>
                     <div class="accountItem">
                     </div>
@@ -369,6 +370,15 @@
             <div data-role="content">
                 <ul data-role="listview" data-inset="true" id="textBookList">
                   <li><a href="#buyPage"data-transition="none"><img src="img/book.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Title<p>Price</p></div></a></li>
+
+                  <li><a href="#buyPage2"data-transition="none"><img src="img/progbook.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Web Programming<p>$20.00</p></div></a></li>
+
+                  <li><a href="#buyPage3"data-transition="none"><img src="img/calcbook.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Calculus<p>$35.00</p></div></a></li>
+
+                  <li><a href="#buyPage4"data-transition="none"><img src="img/chembook.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Chemistry<p>$45.00</p></div></a></li>
+
+                  <li><a href="#buyPage5"data-transition="none"><img src="img/physbook.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Physics<p>$30.00</p></div></a></li>
+
                 </ul>
             </div>
         </div>
@@ -437,6 +447,26 @@
                     <button data-icon="arrow-u" data-iconpos="notext"id="arrowUfurniture"onclick="openOptions('filterOptionsFurniture')"></button>
                 </div>
             </div>
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true" id="furnitureList">
+
+                  <li><a href="#buyPage9"data-transition="none"><img src="img/chair_1.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Comfy Chair<p>$20.00</p></div></a></li>
+
+                  <li><a href="#buyPage10"data-transition="none"><img src="img/chair_2.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Lounge Chair<p>$25.00</p></div></a></li>
+
+                  <li><a href="#buyPage11"data-transition="none"><img src="img/chair_3.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Fancy Chair<p>$30.00</p></div></a></li>
+
+                <li><a href="#buyPage12"data-transition="none"><img src="img/couch_1.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Fold out Couch<p>$45.00</p></div></a></li>
+
+                  <li><a href="#buyPage13"data-transition="none"><img src="img/couch_2.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Colorful Couch<p>$40.00</p></div></a></li>
+
+                  <li><a href="#buyPage14"data-transition="none"><img src="img/couch_3.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Old Couch<p>$15.00</p></div></a></li>
+
+                </ul>
+            </div>
+            
+
+
         </div>
         <div data-role="page" id="Transportation"data-theme="b">
             <div data-role="header"class="header">
@@ -454,6 +484,20 @@
                     <span>Filter options:</span>
                     <button data-icon="arrow-u" data-iconpos="notext"id="arrowUtransportation"onclick="openOptions('filterOptionsTransportation')"></button>
                 </div>
+
+            </div>
+
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true" id="transportList">
+
+                  <li><a href="#buyPage6"data-transition="none"><img src="img/bike_1.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Street Bike<p>$60.00</p></div></a></li>
+
+                  <li><a href="#buyPage7"data-transition="none"><img src="img/bike_2.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Racing Bike<p>$90.00</p></div></a></li>
+
+                  <li><a href="#buyPage8"data-transition="none"><img src="img/scooter.jpg" style="width:100px;height:100px;"><div style="text-align:center;">Scooter<p>$130.00</p></div></a></li>
+
+
+                </ul>
             </div>
         </div>
         <div data-role="page" id="buyPage"data-theme="b">
@@ -474,7 +518,295 @@
                     </div>
                 </ul>
             </div>
+
+            
         </div>
+
+        <div data-role="page" id="buyPage2"data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#mainPage" data-transition="none" data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Buy</h2>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>
+            <div data-role="content" style="text-align:center;">
+                <h2><u>WebProgramming</u></h2>
+                <img src="img/progbook.jpg" style="width:250px;height:250px;">
+                <p>Learned a lot of useful skills.</p>
+                <p>$20.00</p>
+                <ul data-role="controlgroup" data-type="horizontal">
+                    <div class="ui-controlgroup-controls">
+                        <li><a data-role="button"href="#" data-transition="none">Buy Now</a></li>
+                        <li><a data-role="button"href="#" data-transition="none">Contact Seller</a></li>
+                    </div>
+                </ul>
+            </div>
+
+            
+        </div>
+
+        <div data-role="page" id="buyPage3"data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#mainPage" data-transition="none" data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Buy</h2>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>
+            <div data-role="content" style="text-align:center;">
+                <h2><u>Calculus</u></h2>
+                <img src="img/calcbook.jpg" style="width:250px;height:250px;">
+                <p>Saved me in my class.</p>
+                <p>$35.00</p>
+                <ul data-role="controlgroup" data-type="horizontal">
+                    <div class="ui-controlgroup-controls">
+                        <li><a data-role="button"href="#" data-transition="none">Buy Now</a></li>
+                        <li><a data-role="button"href="#" data-transition="none">Contact Seller</a></li>
+                    </div>
+                </ul>
+            </div>
+
+            
+        </div>
+
+        <div data-role="page" id="buyPage4"data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#mainPage" data-transition="none" data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Buy</h2>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>
+            <div data-role="content" style="text-align:center;">
+                <h2><u>Chemistry</u></h2>
+                <img src="img/chembook.jpg" style="width:250px;height:250px;">
+                <p>Brand new.</p>
+                <p>$45.00</p>
+                <ul data-role="controlgroup" data-type="horizontal">
+                    <div class="ui-controlgroup-controls">
+                        <li><a data-role="button"href="#" data-transition="none">Buy Now</a></li>
+                        <li><a data-role="button"href="#" data-transition="none">Contact Seller</a></li>
+                    </div>
+                </ul>
+            </div>
+
+            
+        </div>
+
+        <div data-role="page" id="buyPage5"data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#mainPage" data-transition="none" data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Buy</h2>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>
+            <div data-role="content" style="text-align:center;">
+                <h2><u>Physics</u></h2>
+                <img src="img/physbook.jpg" style="width:250px;height:250px;">
+                <p>A must for the tests.</p>
+                <p>$30.00</p>
+                <ul data-role="controlgroup" data-type="horizontal">
+                    <div class="ui-controlgroup-controls">
+                        <li><a data-role="button"href="#" data-transition="none">Buy Now</a></li>
+                        <li><a data-role="button"href="#" data-transition="none">Contact Seller</a></li>
+                    </div>
+                </ul>
+            </div>
+
+            
+        </div>
+
+        <div data-role="page" id="buyPage6"data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#mainPage" data-transition="none" data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Buy</h2>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>
+            <div data-role="content" style="text-align:center;">
+                <h2><u>Street Bike</u></h2>
+                <img src="img/bike_1.jpg" style="width:250px;height:250px;">
+                <p>Good Condition.</p>
+                <p>$50.00</p>
+                <ul data-role="controlgroup" data-type="horizontal">
+                    <div class="ui-controlgroup-controls">
+                        <li><a data-role="button"href="#" data-transition="none">Buy Now</a></li>
+                        <li><a data-role="button"href="#" data-transition="none">Contact Seller</a></li>
+                    </div>
+                </ul>
+            </div>
+
+            
+        </div>
+
+        <div data-role="page" id="buyPage7"data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#mainPage" data-transition="none" data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Buy</h2>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>
+            <div data-role="content" style="text-align:center;">
+                <h2><u>Racing Bike</u></h2>
+                <img src="img/bike_2.jpg" style="width:250px;height:250px;">
+                <p>Mint Condition.</p>
+                <p>$90.00</p>
+                <ul data-role="controlgroup" data-type="horizontal">
+                    <div class="ui-controlgroup-controls">
+                        <li><a data-role="button"href="#" data-transition="none">Buy Now</a></li>
+                        <li><a data-role="button"href="#" data-transition="none">Contact Seller</a></li>
+                    </div>
+                </ul>
+            </div>
+
+            
+        </div>
+
+        <div data-role="page" id="buyPage8"data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#mainPage" data-transition="none" data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Buy</h2>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>
+            <div data-role="content" style="text-align:center;">
+                <h2><u>Scooter</u></h2>
+                <img src="img/scooter.jpg" style="width:250px;height:250px;">
+                <p>Gas scooter.</p>
+                <p>$130.00</p>
+                <ul data-role="controlgroup" data-type="horizontal">
+                    <div class="ui-controlgroup-controls">
+                        <li><a data-role="button"href="#" data-transition="none">Buy Now</a></li>
+                        <li><a data-role="button"href="#" data-transition="none">Contact Seller</a></li>
+                    </div>
+                </ul>
+            </div>
+
+            
+        </div>
+
+        <div data-role="page" id="buyPage9"data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#mainPage" data-transition="none" data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Buy</h2>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>
+            <div data-role="content" style="text-align:center;">
+                <h2><u>Comfy chair</u></h2>
+                <img src="img/chair_1.jpg" style="width:250px;height:250px;">
+                <p>Super comfy, rarely used.</p>
+                <p>$20.00</p>
+                <ul data-role="controlgroup" data-type="horizontal">
+                    <div class="ui-controlgroup-controls">
+                        <li><a data-role="button"href="#" data-transition="none">Buy Now</a></li>
+                        <li><a data-role="button"href="#" data-transition="none">Contact Seller</a></li>
+                    </div>
+                </ul>
+            </div>
+
+            
+        </div>
+        <div data-role="page" id="buyPage10"data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#mainPage" data-transition="none" data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Buy</h2>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>
+            <div data-role="content" style="text-align:center;">
+                <h2><u>Lounge Chair</u></h2>
+                <img src="img/chair_2.jpg" style="width:250px;height:250px;">
+                <p>Do not have room for it anymore, will take best offer.</p>
+                <p>$25.00</p>
+                <ul data-role="controlgroup" data-type="horizontal">
+                    <div class="ui-controlgroup-controls">
+                        <li><a data-role="button"href="#" data-transition="none">Buy Now</a></li>
+                        <li><a data-role="button"href="#" data-transition="none">Contact Seller</a></li>
+                    </div>
+                </ul>
+            </div>
+
+            
+        </div>
+        <div data-role="page" id="buyPage11"data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#mainPage" data-transition="none" data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Buy</h2>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>
+            <div data-role="content" style="text-align:center;">
+                <h2><u>Fancy Chair</u></h2>
+                <img src="img/chair_3.jpg" style="width:250px;height:250px;">
+                <p>Comes with pillow.</p>
+                <p>$30.00</p>
+                <ul data-role="controlgroup" data-type="horizontal">
+                    <div class="ui-controlgroup-controls">
+                        <li><a data-role="button"href="#" data-transition="none">Buy Now</a></li>
+                        <li><a data-role="button"href="#" data-transition="none">Contact Seller</a></li>
+                    </div>
+                </ul>
+            </div>
+
+            
+        </div>
+
+
+        <div data-role="page" id="buyPage12"data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#mainPage" data-transition="none" data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Buy</h2>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>
+            <div data-role="content" style="text-align:center;">
+                <h2><u>Fold out Couch</u></h2>
+                <img src="img/couch_1.jpg" style="width:250px;height:250px;">
+                <p>Like a futon.</p>
+                <p>$45.00</p>
+                <ul data-role="controlgroup" data-type="horizontal">
+                    <div class="ui-controlgroup-controls">
+                        <li><a data-role="button"href="#" data-transition="none">Buy Now</a></li>
+                        <li><a data-role="button"href="#" data-transition="none">Contact Seller</a></li>
+                    </div>
+                </ul>
+            </div>
+
+            
+        </div>
+        <div data-role="page" id="buyPage13"data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#mainPage" data-transition="none" data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Buy</h2>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>
+            <div data-role="content" style="text-align:center;">
+                <h2><u>Colorful Couch</u></h2>
+                <img src="img/couch_2.jpg" style="width:250px;height:250px;">
+                <p>It's purple!</p>
+                <p>$40.00</p>
+                <ul data-role="controlgroup" data-type="horizontal">
+                    <div class="ui-controlgroup-controls">
+                        <li><a data-role="button"href="#" data-transition="none">Buy Now</a></li>
+                        <li><a data-role="button"href="#" data-transition="none">Contact Seller</a></li>
+                    </div>
+                </ul>
+            </div>
+
+            
+        </div>
+        <div data-role="page" id="buyPage14"data-theme="b">
+            <div data-role="header"class="header">
+                <a href="#mainPage" data-transition="none" data-icon="back"data-iconpos="notext"style="margin-top:5%;"></a>
+                <h2>Buy</h2>
+                <a href="#myAccount"data-transition="none" data-icon="user" data-iconpos="notext"style="margin-top:5%;"></a>
+            </div>
+            <div data-role="content" style="text-align:center;">
+                <h2><u>Old Couch</u></h2>
+                <img src="img/couch_3.jpg" style="width:250px;height:250px;">
+                <p>Well used, still good condition.</p>
+                <p>$15.00</p>
+                <ul data-role="controlgroup" data-type="horizontal">
+                    <div class="ui-controlgroup-controls">
+                        <li><a data-role="button"href="#" data-transition="none">Buy Now</a></li>
+                        <li><a data-role="button"href="#" data-transition="none">Contact Seller</a></li>
+                    </div>
+                </ul>
+            </div>
+
+            
+        </div>
+
+
+
     </body>
 
 </html>
